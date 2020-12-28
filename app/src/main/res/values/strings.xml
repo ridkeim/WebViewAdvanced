@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">WebViewAdvanced</string>
+    <string name="from_gallery">из галереи</string>
+    <string name="from_web">из сети</string>
+    <string name="from_local">из файла</string>
+</resources>
