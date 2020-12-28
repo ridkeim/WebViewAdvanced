@@ -20,33 +20,32 @@ class MainActivity : AppCompatActivity() {
                 action = Intent.ACTION_OPEN_DOCUMENT
                 type = "image/*"
             }.also {
-                startActivityForResult(Intent.createChooser(it,"Выберите картиинку"),
+                startActivityForResult(Intent.createChooser(it,getString(R.string.choose_pic)),
                     IMG_GALLERY_REQUEST_CODE)
             }
         }
         vBinding.buttonLocal.setOnClickListener {
             vBinding.webView.loadUrl(
-                "file:///android_res/drawable/cat.png")
-//            val resId = R.drawable.cat
-//            val uri = Uri.parse(
-//                "${ContentResolver.SCHEME_ANDROID_RESOURCE
-//                }://${resources.getResourcePackageName(resId)
-//                }/${resources.getResourceTypeName(resId)
-//                }/${resources.getResourceEntryName(resId)}"
-//            )
-//            vBinding.webView.loadUrl(
-//                uri.toString())
+                "https://appassets.ridkeim.ru/assets/asset_cat.png"
+//                "https://appassets.ridkeim.ru/res/drawable/cat.png"
+//                "file:///android_asset/asset_cat.png"
+            )
         }
         vBinding.buttonWeb.setOnClickListener {
-            vBinding.webView.loadUrl("http://developer.alexanderklimov.ru/android/images/updowncat.jpg");
+            vBinding.webView.loadUrl("http://developer.alexanderklimov.ru/android/images/updowncat.jpg")
         }
         vBinding.webView.apply {
-            settings.useWideViewPort = true
-            settings.useWideViewPort = true
-            settings.loadWithOverviewMode = true
-            settings.builtInZoomControls = true
-            settings.displayZoomControls = false
-            webViewClient = MyWebClient()
+            settings.apply {
+                useWideViewPort = true
+                loadWithOverviewMode = true
+                builtInZoomControls = true
+                displayZoomControls = false
+                allowFileAccess = false
+                allowFileAccessFromFileURLs = false
+                allowUniversalAccessFromFileURLs = false
+                allowContentAccess = true
+            }
+            webViewClient = MyWebClient(this@MainActivity)
         }
     }
 
