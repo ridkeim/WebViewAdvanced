@@ -11,7 +11,15 @@
     <input type="text" id="username" /><br>
     <input type="password" id="password" />
 </form>
-<a href='tel:89202334903'>Позвонить</a><br>
-<input type="button" value="AlertJSInterface" onclick="javascript:alert(test.getGreeting());"/><br>
+<a href='tel:89202334903'>Позвонить</a><br><br>
+<input type="button" value="Alert JSIn terface" onclick="javascript:alert(test.getGreeting());"/><br><br>
+
+<input type="button" value="Show Toast" onClick="showAndroidToast('Hello From JS!')" /><br><br>
+
+<script type="text/javascript">
+    function showAndroidToast(toast) {
+        test.showToast(toast);
+    }
+</script>
 </body>
 </html>

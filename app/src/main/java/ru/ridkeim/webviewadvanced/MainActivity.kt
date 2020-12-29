@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
                 allowUniversalAccessFromFileURLs = false
                 allowContentAccess = true
                 javaScriptEnabled = true
-                addJavascriptInterface(MyJavaScriptInterface(),"test")
+                addJavascriptInterface(MyJavaScriptInterface(this@MainActivity),"test")
 
             }
             webViewClient = MyWebClient(this@MainActivity)
