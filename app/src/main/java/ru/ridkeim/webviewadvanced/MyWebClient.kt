@@ -24,8 +24,14 @@ class MyWebClient(context : Context) : WebViewClientCompat() {
     @Suppress("DEPRECATION")
     override fun onPageFinished(view: WebView, url: String) {
         super.onPageFinished(view, url)
-        val contentType = URLConnection.guessContentTypeFromName(url)
-        Toast.makeText(view.context,"url=$url\nscale=${view.scale}\nmimeType=$contentType",Toast.LENGTH_SHORT).show()
+        Toast.makeText(view.context,"url=$url\nscale=${view.scale}",Toast.LENGTH_SHORT).show()
+        val user = "user3421"
+        val password = " asLkl_*761rsdfa"
+        view.loadUrl("javascript:(function(){document.getElementById('username').value = '${
+            user
+        }'; document.getElementById('password').value='${
+            password
+        }';})()")
     }
 
     override fun shouldInterceptRequest(

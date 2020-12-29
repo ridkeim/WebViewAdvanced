@@ -15,38 +15,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/buttonGallery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/from_gallery"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/buttonWeb"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
-    <Button
-        android:id="@+id/buttonWeb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/from_web"
-        app:layout_constraintBaseline_toBaselineOf="@id/buttonGallery"
-        app:layout_constraintEnd_toStartOf="@+id/buttonLocal"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/buttonGallery"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
-    <Button
-        android:id="@+id/buttonLocal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/from_local"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintBaseline_toBaselineOf="@id/buttonGallery"
-        app:layout_constraintStart_toEndOf="@+id/buttonWeb"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
