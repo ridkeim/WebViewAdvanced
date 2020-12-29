@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
                 allowUniversalAccessFromFileURLs = false
                 allowContentAccess = true
                 javaScriptEnabled = true
+                addJavascriptInterface(MyJavaScriptInterface(),"test")
+
             }
             webViewClient = MyWebClient(this@MainActivity)
             webChromeClient = MyWebChromeClient(this@MainActivity.baseContext,this@MainActivity.supportActionBar)
