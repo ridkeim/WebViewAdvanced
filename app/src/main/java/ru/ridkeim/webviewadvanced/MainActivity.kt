@@ -1,7 +1,6 @@
 package ru.ridkeim.webviewadvanced
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import ru.ridkeim.webviewadvanced.databinding.ActivityMainBinding
@@ -27,7 +26,9 @@ class MainActivity : AppCompatActivity() {
                 javaScriptEnabled = true
             }
             webViewClient = MyWebClient(this@MainActivity)
+            webChromeClient = MyWebChromeClient(this@MainActivity.baseContext,this@MainActivity.supportActionBar)
             loadUrl("https://appassets.ridkeim.ru/assets/login.html")
         }
+        supportActionBar?.setDisplayShowHomeEnabled(true)
     }
 }
